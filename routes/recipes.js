@@ -3,15 +3,14 @@ const express = require('express');
 const router = express.Router();
 const Recipe = require('../models/Recipe');
 const RecipeController = require('../controllers/recipecontroller');
-router.use(express.urlencoded({ extended: true }));
-router.use(express.json());
+
 const authorize = require('../verifytoken'); // authorisointi eli vahvistetaan token
 
 // 1) KAIKKIEN RESEPTIEN HAKU
 router.get('/', RecipeController.findAll);
 
 // 2) YHDEN RESEPTIN HAKU
-router.get('/:id', RecipeController.findById);
+router.get('/:id', RecipeController.findById2);
 
 // Kaikki reitit joiden kautta voidaan muokata kantaa on suojattu
 

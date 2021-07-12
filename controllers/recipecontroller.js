@@ -16,7 +16,7 @@ const RecipeController = {
       res.json(recipes);
     });
   },
-  // findById hakee yhden reseptin id:n perusteella
+  // findById hakee yhden reseptin _id:n perusteella
   findById: (req, res) => {
     // findOne argumentit: hakukriteeri eli _id:tä vastaava id saadaan clientilta, callback, jolla saadaan tieto
     Recipe.findOne({ _id: req.params.id }, (error, recipe) => {
@@ -24,6 +24,15 @@ const RecipeController = {
         throw error;
       }
       res.json(recipe);
+    });
+  },
+  // findById2 hakee yhden reseptin id:n perusteella
+  findById2: (req, res) => {
+    Recipe.findOne({ id: req.params.id }, (error, student) => {
+      if (error) {
+        throw error;
+      }
+      res.json(student);
     });
   },
   // lisää reseptin
