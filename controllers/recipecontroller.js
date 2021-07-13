@@ -51,7 +51,7 @@ const RecipeController = {
   // poistaa yhden reseptin id:n perusteella
   deleteRecipe: (req, res) => {
     // deleteOne argumentit: hakukriteeri eli _id:tä vastaava id saadaan clientilta, callback, jolla saadaan tieto
-    Recipe.deleteOne({ _id: req.params.id }, (error, result) => {
+    Recipe.deleteOne({ id: req.params.id }, (error, result) => {
       if (error) {
         throw error;
       }
