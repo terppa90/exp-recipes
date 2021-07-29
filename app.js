@@ -21,7 +21,7 @@ const usersRouter = require('./routes/users');
 // jos nämä sijaitsevat eri palvelimilla
 
 const corsOptions = {
-  origin: 'http://localhost:4200',
+  origin: 'https://ang-recipe-app-2021.web.app',
   optionsSuccessStatus: 200,
 };
 
